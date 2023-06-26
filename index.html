@@ -8,36 +8,45 @@
 	<link rel="stylesheet" href="css/styles.css" />
 	
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script type="module" src="js/main.js"></script>
 </head>
 <body>
-<div class="container gx-20">
-    <h1>USD to BTC/ETH distribution calc</h1>
-	<div class="row g-3">
-	  <div class="col-sm">
-		<label for="c_usd" class="col-sm-3 col-form-label col-form-label-sm">USD</label>
-		<input type="text" id="c_usd" class="form-control" placeholder="USD" aria-label="USD" value="30000">
-	  </div>
-	  <div class="col-sm">
-		<label for="c_bitcoin" class="col-sm-3 col-form-label col-form-label-sm">Bitcoin rate: </label>
-		<span class="rate" id="rate_btc"></span>
-		<input type="text" id="c_bitcoin" class="form-control" placeholder="Bitcoin" aria-label="Bitcoin">
-	  </div>
-	  <div class="col-sm">
-		<label for="c_etherium" class="col-sm-3 col-form-label col-form-label-sm">Etherium rate: </label>
-		<span class="rate" id="rate_eth"></span>
-		<input type="text" id="c_etherium" class="form-control" placeholder="Etherium" aria-label="Etherium">
-	  </div>
-	</div>
-	<div class="row g-3 mt-1 justify-content-end">
-		<div class="col-sm-8">
-			<label for="customRange3" class="form-label">Distribution split</label>
-			<span>BTC%: <span class="rate" id="split_btc">70</span></span>
-			<span>ETH%: <span class="rate" id="split_eth">30</span></span>
-			<input type="range" class="form-range" min="0" max="100" step="1" id="dist_range" value="70">
+	<div class="container-lg mt-4">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="jumbotron">
+					<h1>USD to BTC/ETH distribution calc</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-4">
+				<label for="c_usd" class=" col-form-label col-form-label-sm">USD</label>
+				<input type="text" id="c_usd" class="form-control" placeholder="USD" aria-label="USD" value="30000">
+			</div>
+			<div class="col-sm-12 col-lg-4">
+				<label for="c_bitcoin" class=" col-form-label col-form-label-sm">Bitcoin rate: </label>
+				<span class="rate" id="rate_btc"></span>
+				<input type="text" id="c_bitcoin" class="form-control" placeholder="Bitcoin" aria-label="Bitcoin">
+			</div>
+			<div class="col-sm-12 col-lg-4">
+				<label for="c_etherium" class=" col-form-label col-form-label-sm">Etherium rate: </label>
+				<span class="rate" id="rate_eth"></span>
+				<input type="text" id="c_etherium" class="form-control" placeholder="Etherium" aria-label="Etherium">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-4">
+			</div>
+			<div class="col-sm-12 col-lg-8">
+				<label for="customRange3" class="form-label">Distribution split</label>
+				<span>BTC%: <span class="rate" id="split_btc">70</span></span>
+				<span>ETH%: <span class="rate" id="split_eth">30</span></span>
+				<input type="range" class="form-range" min="0" max="100" step="1" id="dist_range" value="70">
+			</div>
 		</div>
 	</div>
-	<div id="div1"></div>
-</div>
 </body>
 </html>
+
