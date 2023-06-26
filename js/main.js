@@ -16,6 +16,7 @@ function Get_Data(){
 			$("#rate_btc").text(rate_btc);
 			rate_eth = data.data.rates.ETH;
 			$("#rate_eth").text(rate_eth);
+			$('#c_usd').trigger('input');
 		},
 		error : function(request,error)
 		{
@@ -44,6 +45,7 @@ $(function() {
 	$('#c_usd').on('input',function(e){
 		Calculate_BTC_ETH_split($(this).val());
 	});
+	
 
 	$('#dist_range').on('input',function(e){
 		Update_BTC_ETH_split($(this).val());
