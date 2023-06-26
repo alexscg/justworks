@@ -26,8 +26,8 @@ function Get_Data(){
 }
 
 function Calculate_BTC_ETH_split(v){
-	$('#c_bitcoin').val(v*(percent_btc/100)*rate_btc);
-	$('#c_etherium').val(v*(percent_eth/100)*rate_eth);
+	$('#c_bitcoin').val(parseFloat(v*(percent_btc/100)*rate_btc).toFixed(8));
+	$('#c_etherium').val(parseFloat(v*(percent_eth/100)*rate_eth).toFixed(8));
 }
 
 function Update_BTC_ETH_split(v){
