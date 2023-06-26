@@ -1,17 +1,8 @@
-//$('h1').on('click', () => {
-//  alert('jQuery works!');
-//});
 
-$("h1").click(function(){
-	});
 	
-var rate_btc, rate_eth;
+var rate_btc, rate_eth, percent_btc = 70, percent_eth = 30;
 
-
-$(function() {
-	
-		console.log("in");
-
+function Get_Data(){
 	$.ajax({
 
 		url : 'https://api.coinbase.com/v2/exchange-rates',
@@ -31,12 +22,31 @@ $(function() {
 			alert("Request: "+JSON.stringify(request));
 		}
 	});
-		c_bitcoin
+}
+
+function Calculate_BTC_ETH_split(v){
+	$('#c_bitcoin').val(v*(percent_btc/100)*rate_btc);
+	$('#c_etherium').val(v*(percent_eth/100)*rate_eth);
+}
+
+function Update_BTC_ETH_split(v){
+	percent_btc = v;
+	percent_eth = 100 - v;
+	$('#split_btc').text(percent_btc);
+	$('#split_eth').text(percent_eth);
+	Calculate_BTC_ETH_split($('#c_usd').val());
+}
+
+$(function() {
+
+	Get_Data();
+
 	$('#c_usd').on('input',function(e){
-		var v = $(this).val();
-		$('#c_bitcoin').val(v*0.7*rate_btc);
-		$('#c_etherium').val(v*0.3*rate_eth);
+		Calculate_BTC_ETH_split($(this).val());
 	});
 
-
+	$('#dist_range').on('input',function(e){
+		Update_BTC_ETH_split($(this).val());
+	});
+	
 });
